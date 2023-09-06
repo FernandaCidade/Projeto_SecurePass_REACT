@@ -1,0 +1,52 @@
+
+div{
+    width: 500px;
+    height: 500px;   
+    
+}
+
+.emglobador{
+    margin-left: 500px;
+    background-color: aqua;
+    border: 5px solid gray;
+
+    border-radius: 30px;
+}
+.emglobador span{
+
+    display: flex;
+    justify-content: center;
+    color: black;
+    margin-top: 10px;
+}
+.tabelaPerfil{
+    display: flex;
+    flex-direction: row;
+    color: black;
+    margin-top: 10px;
+
+}
+
+
+.tabelaPerfil th, .tabelaPerfil td{
+    padding: 0.8rem;
+    
+}
+
+.esquerda th{
+    display: flex;
+    flex-basis: 100%;
+    margin-right: 50px;
+    padding-left: 50px ;
+   
+   
+
+}
+
+.direita td{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    padding-left: 50px;
+    
+}

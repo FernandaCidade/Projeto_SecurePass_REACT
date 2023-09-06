@@ -50,3 +50,6 @@ div{
     padding-left: 50px;
     
 }
+.direita li {
+    list-style-type: none;
+}

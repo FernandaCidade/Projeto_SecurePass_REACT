@@ -1,58 +1,30 @@
-import * as React from 'react';
-import { useState } from 'react';
+
+import { useState } from "react";
 import "./style.css"
-// import fakeData from './'; Aqui vamos importar a API 
+// import './index.css'
+import api from "../../utils/api";
 
 
 
 function Perfil(){
 
-    function informacaoUsuario (){
+    const [users, Setusers] = useState<any[]>([
+        {
 
-       
-        
-        const [users, Setusers] = useState<any[]>([
-            {
-            img_perfil: "Foto_perfil.png",
-            nome: "Thiago Nascimento",
-            area: "Chao de Fabrica",
-            dataNascimento: "28/08/1998",
-            funcao: "Chefe chao de fabrica",
-            sessao: 304,
-            id: 1
-            }
-        ])
+        img_perfil: "Foto_perfil.png",
+        matricula: 1231720,
+        nome: "Thiago Nascimento",
+        area: "Chao de Fabrica",
+        dataNascimento: "28/08/1998",
+        funcao: "Chefe chao de fabrica",
+        sessao: 304,
+        id: 1
+        }
+    ])
+
     
-    }
-
-    const colunas = [
-
-        {
-            title: 'Nome',
-            field: 'nome'
-        },
-
-        {
-            title: 'Area',
-            field: 'area'
-        },
-        {
-            title: 'Data de Nascimento',
-            field: 'dataNascimento'
-        },
-        {
-            title: 'Função',
-            field: 'funcao'
-        },
-        {
-            title: 'Sessão',
-            field: 'sessao'
-        },
-       
-    ]
-
-
     return(
+        <>
         <div>
             <div className='emglobador'>
                 <span>#ADM</span>
@@ -67,11 +39,25 @@ function Perfil(){
                             <th>Sessão</th>
                         </tr>
                     </thead>
-                    <tbody className='direita'>
-                        <td> {users} </td>
+                        <tbody className="direita">
+                        
+
+                         {users.map((dev: any, index: number) => {
+                            return <li key={index}>
+                                    <td>{dev.id}</td>
+                                   <td>{dev.area}</td>
+                                    <td>{dev.nome}</td>
+                                    <td>{dev.matricula}</td>
+                                   <td> {dev.dataNascimento}</td>
+                                 </li>
+                        }
+                        )}
+                       
                     </tbody>
                 </table>
+             </div>
             </div>
-    </div>
+        </>
+      
     );
 }export default Perfil;

@@ -2,26 +2,35 @@
 import { useState } from "react";
 import "./style.css"
 // import './index.css'
-// import api from "../../utils/api";
+// import api from "../../utils/db.json"; necessário localizar a API 
+
+import CardPerfil from "../../Componentes/CardPerfil";
 
 
 
 function Perfil(){
 
-    const [users, Setusers] = useState<any[]>([
+    const [users, setUsers] = useState<any[]>([
         {
 
-        img_perfil: "../assets/img/img_perfil.png",
-        matricula: 1231720,
-        nome: "Thiago Nascimento",
-        area: "Chao de Fabrica",
-        dataNascimento: "28/08/1998",
-        funcao: "Chefe chao de fabrica",
-        sessao: 304,
-        id: 1
+        // img_perfil: "../assets/img/img_perfil.png",
+        // matricula: 1231720,
+        // nome: "Thiago Nascimento",
+        // area: "Chao de Fabrica",
+        // dataNascimento: "28/08/1998",
+        // funcao: "Chefe chao de fabrica",
+        // sessao: 304,
+        // id: 1
         }
-    ])
+    ]);
 
+    function listarDesenvolvedores(){
+        api.get("users").then((resposta: any) =>{
+            console.log(resposta.data)
+            setUsers(resposta.data);
+        })
+
+    }
     
     return(
         <>
@@ -49,13 +58,16 @@ function Perfil(){
 
                          {users.map((dev: any, index: number) => {
                             return <li key={index}>
-                                    {/* <td>{dev.img_perfil}</td> */}
-                                    <td>{dev.matricula}</td>
-                                    <td>{dev.nome}</td>
-                                    <td>{dev.area}</td>
-                                   <td> {dev.dataNascimento}</td>
-                                   <td> {dev.funcao}</td>
-                                   <td> {dev.sessao}</td>
+                                   <CardPerfil
+                                   id={dev.id}
+                                   matricula={dev.matricula}
+                                   nome={dev.nome}
+                                   area={dev.area}
+                                   dataNascimento={dev.dataNascimento}
+                                   funcao={dev.funcao}
+                                   sessao={dev.sessao}
+
+                                   />
                                  </li>
                         }
                         )}

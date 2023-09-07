@@ -48,7 +48,7 @@ h2{
 /* configurando o traço */
 hr {
 	border: 0;
-	border-top: 1px solid black;
+	border-top: 0.5px solid gray;
     margin: 5px 5px 5px 5px;
 }
 
@@ -89,10 +89,6 @@ hr {
 
 @media screen and (max-width: 800px) {
 
-    /* .emglobador{
-       
-    }
-     */
 
 }
    

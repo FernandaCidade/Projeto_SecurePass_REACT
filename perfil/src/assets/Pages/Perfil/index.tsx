@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "./style.css"
 // import './index.css'
-import api from "../../utils/api";
+// import api from "../../utils/api";
 
 
 
@@ -11,7 +11,7 @@ function Perfil(){
     const [users, Setusers] = useState<any[]>([
         {
 
-        img_perfil: "Foto_perfil.png",
+        img_perfil: "../assets/img/img_perfil.png",
         matricula: 1231720,
         nome: "Thiago Nascimento",
         area: "Chao de Fabrica",
@@ -25,9 +25,14 @@ function Perfil(){
     
     return(
         <>
+         
         <div>
+         
             <div className='emglobador'>
-                <span>#ADM</span>
+                  <h2>Perfil</h2>
+                {/* adicionar imagem do usuario aqui */}
+                <span>#administrador</span>
+                <hr />
                 <table className='tabelaPerfil'>
                     <thead className='esquerda'>
                         <tr>
@@ -44,17 +49,20 @@ function Perfil(){
 
                          {users.map((dev: any, index: number) => {
                             return <li key={index}>
-                                    <td>{dev.id}</td>
-                                   <td>{dev.area}</td>
-                                    <td>{dev.nome}</td>
+                                    {/* <td>{dev.img_perfil}</td> */}
                                     <td>{dev.matricula}</td>
+                                    <td>{dev.nome}</td>
+                                    <td>{dev.area}</td>
                                    <td> {dev.dataNascimento}</td>
+                                   <td> {dev.funcao}</td>
+                                   <td> {dev.sessao}</td>
                                  </li>
                         }
                         )}
                        
                     </tbody>
                 </table>
+                <hr />
              </div>
             </div>
         </>

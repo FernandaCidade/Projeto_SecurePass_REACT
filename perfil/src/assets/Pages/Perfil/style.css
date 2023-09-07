@@ -1,24 +1,57 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
 
-div{
-    width: 500px;
-    height: 500px;   
-    
+:root {
+    --branco: #FFFFFF;
+
+    --font1: 'Lato', sans-serif;
+    --font2: 'Montserrat', sans-serif;
+
 }
 
-.emglobador{
-    margin-left: 500px;
-    background-color: aqua;
-    border: 5px solid gray;
+body{
+    background-image: url(../../img/Backgronud.png);
+}
 
+h2{
+    color: black;
+    display: flex;
+    justify-content: center;
+
+    padding-top: 5px;
+}
+
+/* definindo o tamanho da table */
+
+
+.emglobador{
+   
+    margin-left: 500px;
+    font-family: var(--font1);
+    background-color: var(--branco);
     border-radius: 30px;
 }
 .emglobador span{
 
     display: flex;
-    justify-content: center;
+    justify-content: left;
     color: black;
-    margin-top: 10px;
+    margin-left: 50px;
+    padding-top: 50px;
+    text-transform: uppercase;
+
+    
 }
+/* configurando o traço */
+hr {
+	border: 0;
+	border-top: 1px solid black;
+    margin: 5px 5px 5px 5px;
+}
+
 .tabelaPerfil{
     display: flex;
     flex-direction: row;
@@ -27,29 +60,39 @@ div{
 
 }
 
-
+/* definindo o espaçamento das informações  */
 .tabelaPerfil th, .tabelaPerfil td{
     padding: 0.8rem;
     
 }
 
+/* orientando as informações em paralelo */
 .esquerda th{
     display: flex;
     flex-basis: 100%;
     margin-right: 50px;
     padding-left: 50px ;
-   
-   
-
 }
 
 .direita td{
     display: flex;
     flex-direction: column;
     text-align: right;
-    padding-left: 50px;
+    padding-right: 50px;
     
 }
 .direita li {
     list-style-type: none;
 }
+
+/* Responsividade da tabela */
+
+@media screen and (max-width: 800px) {
+
+    /* .emglobador{
+       
+    }
+     */
+
+}
+   

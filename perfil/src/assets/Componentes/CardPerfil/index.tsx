@@ -1,33 +1,21 @@
-// import { Link } from "react-router-dom"
-// import "./style.css"
+import Perfil from "../../Pages/Perfil"
 
 export default function CardPerfil(props: any){
 
-    function parseListaTechs(){
-        if(typeof props.techs === "string"){
-            return JSON.parse(props.techs)
-        }else{
-            return props.techs
-        }
-    }
 
     return (
-        <div className="dev">
-            <div className="grupo_contato">
-                <img src={"http://localhost:3000/static/" + props.foto} alt="" />
-                <div className="contato_dev">
-                    
-                    {/* <h3>{props.nome}</h3> */}
-                    <p>{props.email}</p>
-                </div>
-            </div>
+        
+
             <div className="techs">
-               {
-                parseListaTechs().map((tech: string, index: number) =>{
-                return <span key={index}>{tech}</span>
-                })
-              }
+            
+                 <th>{props.matricula}</th> 
+                 <th>{props.nome}</th> 
+                 <th>{props.area}</th> 
+                 <th>{props.dataNascimento}</th> 
+                 <th>{props.funcao}</th> 
+                 <th>{props.sessao}</th> 
+                
              </div>
-        </div>
+       
     )
 }

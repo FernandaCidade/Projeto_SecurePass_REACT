@@ -1,10 +1,11 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./style.css"
 // import './index.css'
 // import api from "../../utils/db.json"; necessário localizar a API 
 
 import CardPerfil from "../../Componentes/CardPerfil";
+import api from "../../utils/api";
 
 
 
@@ -23,6 +24,10 @@ function Perfil(){
         // id: 1
         }
     ]);
+
+    useEffect(() => {
+        listarDesenvolvedores()
+    }, [])
 
     function listarDesenvolvedores(){
         api.get("users").then((resposta: any) =>{
@@ -54,10 +59,9 @@ function Perfil(){
                         </tr>
                     </thead>
                         <tbody className="direita">
-                        
-
+                    {/* Necessário verificar o login do usuário para as informações serem puxadas adequadamente  */}
                          {users.map((dev: any, index: number) => {
-                            return <li key={index}>
+                            return <tr key={index}>
                                    <CardPerfil
                                    id={dev.id}
                                    matricula={dev.matricula}
@@ -68,7 +72,7 @@ function Perfil(){
                                    sessao={dev.sessao}
 
                                    />
-                                 </li>
+                                 </tr>
                         }
                         )}
                        

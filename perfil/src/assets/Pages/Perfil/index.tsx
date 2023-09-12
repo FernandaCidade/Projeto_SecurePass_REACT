@@ -62,7 +62,7 @@ function Perfil(){
                     {/* Necessário verificar o login do usuário para as informações serem puxadas adequadamente  */}
                          {users.map((dev: any, index: number) => {
                             return <tr key={index}>
-                                   <CardPerfil
+                                  <CardPerfil
                                    id={dev.id}
                                    matricula={dev.matricula}
                                    nome={dev.nome}
@@ -70,7 +70,7 @@ function Perfil(){
                                    dataNascimento={dev.dataNascimento}
                                    funcao={dev.funcao}
                                    sessao={dev.sessao}
-
+                                   
                                    />
                                  </tr>
                         }

@@ -20,14 +20,14 @@ h2{
 }
 
 
-.direita tr{
+.users tr{
     display: flex;
     flex-direction: column;
     text-align: right;
     padding-right: 50px;
     
 }
-.direita th {
+.users th {
     list-style-type: none;
 }
 

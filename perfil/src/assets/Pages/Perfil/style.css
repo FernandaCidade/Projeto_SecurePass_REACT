@@ -21,7 +21,7 @@ h2{
     display: flex;
     justify-content: center;
 
-    padding-top: 5px;
+    padding-top: 15px;
 }
 
 /* definindo o tamanho da table */
@@ -29,7 +29,9 @@ h2{
 
 .emglobador{
    
-    margin-left: 500px;
+    width:100%;
+    margin: auto;
+    margin-left:130%;
     font-family: var(--font1);
     background-color: var(--branco);
     border-radius: 30px;
@@ -39,18 +41,18 @@ h2{
     display: flex;
     justify-content: left;
     color: black;
-    margin-left: 50px;
+    margin-left: 30px;
     padding-top: 50px;
     text-transform: uppercase;
 
     
 }
 /* configurando o traço */
-hr {
+/* hr {
 	border: 0;
 	border-top: 0.5px solid gray;
     margin: 5px 5px 5px 5px;
-}
+} */
 
 .tabelaPerfil{
     display: flex;
@@ -62,7 +64,7 @@ hr {
 
 /* definindo o espaçamento das informações  */
 .tabelaPerfil th, .tabelaPerfil td{
-    padding: 0.8rem;
+    padding: 0.5rem;
     
 }
 
@@ -70,25 +72,62 @@ hr {
 .esquerda th{
     display: flex;
     flex-basis: 100%;
-    margin-right: 50px;
-    padding-left: 50px ;
+    margin-right: 10px;
+    padding-left: 30px ;
 }
 
 .direita tr{
     display: flex;
     flex-direction: column;
     text-align: right;
-    padding-right: 50px;
+    padding-right: 25px;
     
 }
 .direita th {
     list-style-type: none;
 }
 
+/* Alinhando o P */
+
+p {
+  text-align: left;
+  color: #2b961f;
+  text-transform: uppercase;
+  padding-left: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+    padding-bottom: 5px;
+
+}
+
+
+
+
 /* Responsividade da tabela */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1049px) {
+    h2,
+    p,
+    span,
+    .esquerda th,
+    .direita tr,
+    .direita th{
+        font-size: small;
+        
+    }
+    .emglobador span{
+        padding-top: 0%;
+    }
+    .emglobador{
+        width:80%;
+        margin: auto;
+        margin-left:50%;
+        font-family: var(--font1);
+        background-color: var(--branco);
+        border-radius: 30px;
+    }
 
+ 
 
 }
    

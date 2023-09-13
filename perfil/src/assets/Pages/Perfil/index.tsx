@@ -41,12 +41,12 @@ function Perfil(){
         <>
          
         <div>
-         
+          
             <div className='emglobador'>
-                  <h2>Perfil</h2>
+                 <h2>Perfil</h2>
                 {/* adicionar imagem do usuario aqui */}
                 <span>#administrador</span>
-                <hr />
+                <hr/>
                 <table className='tabelaPerfil'>
                     <thead className='esquerda'>
                         <tr>
@@ -55,28 +55,31 @@ function Perfil(){
                             <th>Área</th>
                             <th>Data de Nascimento</th>
                             <th>Função</th>
-                            <th>Sessão</th>
+                            <th>Sessão</th> 
                         </tr>
+
                     </thead>
                         <tbody className="direita">
                     {/* Necessário verificar o login do usuário para as informações serem puxadas adequadamente  */}
-                         
+                   
                                  <CardPerfil
                                    id={user.id}
                                    matricula={user.matricula}
                                    nome={user.nome}
                                    area={user.area}
-                                   dataNascimento={user.dataNascimento}
+                                   dataNascimento={user.dataNasc}
                                    funcao={user.funcao}
                                    sessao={user.sessao}
                                    
                                    />
-                                   
-                            
-                       
+  
                     </tbody>
+                  
                 </table>
                 <hr />
+                <p>id verificado</p>
+                <p>sucesso</p>
+                       
              </div>
             </div>
         </>

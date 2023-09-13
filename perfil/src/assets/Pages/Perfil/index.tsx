@@ -1,17 +1,17 @@
 
 import { useEffect, useState } from "react";
 import "./style.css"
-// import './index.css'
-// import api from "../../utils/db.json"; necessário localizar a API 
-
 import CardPerfil from "../../Componentes/CardPerfil";
 import api from "../../utils/api";
+import { useParams } from "react-router-dom";
 
 
 
 function Perfil(){
 
-    const [users, setUsers] = useState<any[]>([
+    const {id} = useParams();
+
+    const [user, setUser] = useState<any>(
         {
 
         // img_perfil: "../assets/img/img_perfil.png",
@@ -23,16 +23,16 @@ function Perfil(){
         // sessao: 304,
         // id: 1
         }
-    ]);
+    );
 
     useEffect(() => {
-        listarDesenvolvedores()
+        mostrarUser()
     }, [])
 
-    function listarDesenvolvedores(){
-        api.get("users").then((resposta: any) =>{
+    function mostrarUser(){
+        api.get(`users/${id}`).then((resposta: any) =>{
             console.log(resposta.data)
-            setUsers(resposta.data);
+            setUser(resposta.data);
         })
 
     }
@@ -52,7 +52,7 @@ function Perfil(){
                         <tr>
                             <th>Matricula</th>
                             <th>Nome</th>
-                            <th>Area</th>
+                            <th>Área</th>
                             <th>Data de Nascimento</th>
                             <th>Função</th>
                             <th>Sessão</th>
@@ -60,21 +60,19 @@ function Perfil(){
                     </thead>
                         <tbody className="direita">
                     {/* Necessário verificar o login do usuário para as informações serem puxadas adequadamente  */}
-                         {users.map((dev: any, index: number) => {
-                            return <tr key={index}>
-                                  <CardPerfil
-                                   id={dev.id}
-                                   matricula={dev.matricula}
-                                   nome={dev.nome}
-                                   area={dev.area}
-                                   dataNascimento={dev.dataNascimento}
-                                   funcao={dev.funcao}
-                                   sessao={dev.sessao}
+                         
+                                 <CardPerfil
+                                   id={user.id}
+                                   matricula={user.matricula}
+                                   nome={user.nome}
+                                   area={user.area}
+                                   dataNascimento={user.dataNascimento}
+                                   funcao={user.funcao}
+                                   sessao={user.sessao}
                                    
                                    />
-                                 </tr>
-                        }
-                        )}
+                                   
+                            
                        
                     </tbody>
                 </table>
